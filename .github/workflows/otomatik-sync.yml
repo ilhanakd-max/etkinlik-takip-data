@@ -17,13 +17,9 @@ jobs:
         run: |
           curl -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" -L "https://docs.google.com/spreadsheets/d/1xZsSddr1q02qXiAT435QX98M5I2znH609_stiMFy258/export?format=xlsx" -o "2026 YILI ÇAKABEY.xlsx"
 
-      - name: Değişiklikleri Kaydet ve Sitenizi Güncelle
+      - name: Değişiklikleri Kaydet
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add "2026 YILI ÇAKABEY.xlsx"
-          
           git diff --quiet && git diff --staged --quiet || (git commit -m "Google Drive'dan otomatik Excel güncellemesi" && git push)
-          
-          # Etkinlik Takip web sitenize "yeni dosya geldi" sinyalini gönder
-          curl -s -L "https://cesmebld.free.nf/api_excel_sync_cakabey.php?key=123456789"
