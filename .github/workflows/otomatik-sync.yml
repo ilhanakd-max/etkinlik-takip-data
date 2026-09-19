@@ -15,7 +15,7 @@ jobs:
 
       - name: Excel Dosyasını İndir
         run: |
-          curl -L "https://docs.google.com/spreadsheets/d/1xZsSddr1q02qXiAT435QX98M5I2znH609_stiMFy258/export?format=xlsx" -o "2026 YILI ÇAKABEY.xlsx"
+          curl -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" -L "https://docs.google.com/spreadsheets/d/1xZsSddr1q02qXiAT435QX98M5I2znH609_stiMFy258/export?format=xlsx" -o "2026 YILI ÇAKABEY.xlsx"
 
       - name: Değişiklikleri Kaydet ve Sitenizi Güncelle
         run: |
